@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    render json: { data: my_posts }
+    render json: { data: Post.all }
   end
 
   def create
@@ -17,10 +17,6 @@ class PostsController < ApplicationController
 
   def post_params
     params.permit(:content, :genre_id, :user_token)
-  end
-
-  def my_posts
-    Post.where(user_token: params[:user_token])
   end
 
 end
