@@ -1,7 +1,5 @@
 class ApplicationController < ActionController::API
-  protect_from_forgery with: :exception
-
-  include SessionsHelper    
+  include FirebaseUtils    
 
   private                                                        
     # tokenが正規のものであれば、デコード結果を返す
