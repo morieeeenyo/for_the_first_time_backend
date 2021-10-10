@@ -3,13 +3,13 @@ class Api::UsersController < ApplicationController
   def create
     raise ArgumentError, 'BadRequest Parameter' if payload.blank?
     user = User.create!(sign_up_params.merge(uid: payload['sub']))
-    render json: user, serializer: V1::AuthSerializer, status: :ok
+    render json: user, serializer: AuthSerializer, status: :ok
   end
 
   private
 
   def sign_up_params
-    params.require(:registration).permit(:user_name, :display_name)
+    params.require(:user).permit(:email, :uid)
   end
 
   def token_from_request_headers
