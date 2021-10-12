@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user
 
   def index
-    render json: { data: Post.all.order(id: :desc) }
+    render json: { data: current_user.posts.order(id: :desc) }
   end
 
   def create
