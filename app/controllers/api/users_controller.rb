@@ -1,8 +1,8 @@
 class Api::UsersController < ApplicationController
-
   def create
     FirebaseIdToken::Certificates.request
     raise ArgumentError, 'BadRequest Parameter' if payload.blank?
+
     user = User.find_or_initialize_by(sign_up_params.merge(uid: payload['sub']))
     if user.save
       render json: user, status: :ok
@@ -28,5 +28,4 @@ class Api::UsersController < ApplicationController
   def payload
     @payload ||= FirebaseIdToken::Signature.verify token
   end
-
 end

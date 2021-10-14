@@ -5,5 +5,4 @@ class Post < ApplicationRecord
 
   validates :content, presence: true
   validates :genre_id, numericality: { other_than: 0 }
-
 end

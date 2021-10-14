@@ -20,5 +20,4 @@ class PostsController < ApplicationController
   def post_params
     params.permit(:content, :genre_id, :user_token)
   end
-
 end
