@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :posts, only: [:index, :create]
   namespace :api do
+    resources :posts, only: [:index, :create]
     resources :users, only: :create
   end
 end
