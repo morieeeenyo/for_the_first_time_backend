@@ -25,7 +25,6 @@ module ForTheFirstTimeBackend
     config.load_defaults 6.0
     config.generators do |g|
       g.skip_routes true  # routes.rbを変更しない
-      g.template_engine :erb # erbファイルを自動生成
       g.assets     false # scessとjavascriptを生成しない
       g.helper     false # helperを生成しない
       g.test_framework :rspec    # RSpecを使用
