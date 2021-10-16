@@ -23,6 +23,13 @@ module ForTheFirstTimeBackend
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
+    config.generators do |g|
+      g.skip_routes true  # routes.rbを変更しない
+      g.template_engine :erb # erbファイルを自動生成
+      g.assets     false # scessとjavascriptを生成しない
+      g.helper     false # helperを生成しない
+      g.test_framework :rspec    # RSpecを使用
+    end
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
