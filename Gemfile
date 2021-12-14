@@ -47,3 +47,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'active_hash'
 gem 'firebase-auth-rails'
+
+gem 'grape-swagger-rails'
+gem 'swagger-docs'
